@@ -7,7 +7,8 @@
  */
 function sumValues(num1, num2, add) {
     if (add) {
-        const result = 0;
+        //const result = 0; const makes it so that the variable cannot be reassigned a different value
+        let result = 0;
 
         result = num1 + num2;
 
@@ -29,7 +30,8 @@ function discountPrices(prices, discount) {
     const length = prices.length;
     let discountedPrice = 0
     for(let i = 0; i < length; i++) {
-        discountedPrice += prices[i] * (1 - discount);
+        //discountedPrice += prices[i] * (1 - discount); this makes it so that discounted price keeps getting added by each new price but we want it to reset each time
+        discountedPrice = prices[i] * (1 - discount);
         discounted.push(discountedPrice);
     }
 
