@@ -15,7 +15,7 @@ function sumValues(num1, num2, add) {
         return result;
     }
     else {
-        return !add;
+        return false;       //return false if some input was incorrect
     }
 }
 
@@ -28,13 +28,17 @@ function sumValues(num1, num2, add) {
 function discountPrices(prices, discount) {
     const discounted = []
     const length = prices.length;
+
+    if (discount < 0 || discount > 1 || length === 0){   //input validation basically
+        return false;
+    }
+
     let discountedPrice = 0
     for(let i = 0; i < length; i++) {
         //discountedPrice += prices[i] * (1 - discount); this makes it so that discounted price keeps getting added by each new price but we want it to reset each time
         discountedPrice = prices[i] * (1 - discount);
         discounted.push(discountedPrice);
     }
-
     return discounted;
 }
 
